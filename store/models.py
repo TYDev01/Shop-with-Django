@@ -15,6 +15,10 @@ class Product(models.Model):
     image= models.ImageField(upload_to='upload/product/')
     Category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     description = models.CharField(max_length=250, default='', blank=True, null=True)
+    remaining_items = models.IntegerField(default=0)
+
+    is_sale = models.BooleanField(default=False)
+    sale_price = models.DecimalField(default=0, decimal_places=2, max_digits=6)
 
 
     def __str__(self):
