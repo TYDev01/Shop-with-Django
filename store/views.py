@@ -6,4 +6,5 @@ def home(request):
     products = Product.objects.all()
     return render(request, 'home.html', {'products': products})
 
-# 
+def about(req):
+    return render(req, 'about.html')
