@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">Register</h1>
+      <p class="lead fw-normal text-white-50 mb-0">User Registeration...</p>
+    </div>
+  </div>
+</header>
+<br />
+<br />
+<form method="POST" action="{% url 'register' %}" class="col-4 offset-4">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="btn btn-secondary">Register</button>
+</form>
+{% endblock %}
