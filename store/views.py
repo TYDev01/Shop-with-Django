@@ -12,8 +12,8 @@ from django.utils.text import slugify
 # Create your views here.
 
 def category(request, slug):
-    normalized_slug = slug.replace('-', ' ') # Replaced spaces with hyphen
-    # normalized_slug = slugify(slug)
+    # slug = slug.replace('-', ' ') # Replaced spaces with hyphen
+    normalized_slug = slugify(slug)
     try:
         category = Category.objects.get(name=normalized_slug)
         products = Product.objects.filter(category=category)
